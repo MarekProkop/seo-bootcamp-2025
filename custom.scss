@@ -1,0 +1,41 @@
+/*-- scss:defaults --*/
+
+$presentation-font-size-root: 36px;
+$presentation-h2-font-size: 1.8em;
+$presentation-h3-font-size: 1.1em;
+
+/*-- scss:rules --*/
+
+h2 {
+  margin-bottom: 0.5em !important;
+}
+
+.reveal div.sourceCode {
+  margin: 1em 0 !important;
+}
+
+#icon-list .quarto-layout-row {
+  align-items: center;
+}
+#icon-list .quarto-layout-row p {
+  text-align: center;
+  font-size: 70%;
+  line-height: 1;
+}
+
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}
+
+.anno_number p {
+  background-color: #ffab40;
+  font-size: 1em;
+  width: 1em;
+  height: 1em;
+  padding: 0.2em;
+  margin: 0;
+  border-radius: 50%;
+  line-height: 1;
+  text-align: center;
+}

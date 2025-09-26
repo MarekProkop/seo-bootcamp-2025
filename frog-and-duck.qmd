@@ -1,0 +1,329 @@
+---
+title: "Frog&Duck"
+subtitle: "SEO workflow pro obří crawly Screaming Frogem"
+author: "Marek Prokop, [PROKOP software s.r.o.](https://www.prokopsw.cz/cs)"
+format:
+  revealjs:
+    theme: [white, custom.scss]
+    highlight-style: a11y
+    controls: true
+    controls-layout: bottom-right
+    progress: true
+    code-line-numbers: false
+    auto-stretch: true
+---
+
+## {.center}
+
+::: columns
+::: column
+![](images/frog-logo.jpg)
+:::
+
+::: column
+![](images/duckdb-logo.svg)
+:::
+
+:::::
+
+## Proč Screaming Frog
+
+- Průmysový standard.
+- Zvládá velké weby (i miliony adres).
+- Exportuje použitelná data.
+- Dělá chyby, ale jdou řešit.
+
+## Proč DuckDb
+
+- Rychlá databáze speciálně na analytiku.
+- Zvládne miliony řádků a desítky GB dat.
+- Funguje lokálně, nepotřebuje server.
+- Provoz zvládnete i bez IT podpory.
+- Přístup i z Pythonu, R a dalších jazyků.
+- Autoři jsou sympaťáci.
+
+Před lety jsem na velké crawly používal BigQuery + Looker Studio, ale byl to šílený opruz.
+
+## Rozhraní k DuckDb
+
+- CLI
+- vlastní GUI
+- IDE (TablePlus, Beekeeper Studio, DBeaver, VSCode + extension)
+- programovací jazyky (Python, R, Node.js, PHP...)
+- AI + MCP server
+
+# Kompletní workflow
+
+## Crawl
+
+![](images/sf-01.png)
+
+## Export CSV
+
+![](images/sf-02.png)
+
+## Otevřu terminál
+
+![](images/terminal-01.png)
+
+## Spustím DuckDb a založím databázi
+
+![](images/cli-01.png)
+
+## Importuju CSV soubory
+
+![](images/cli-02.png)
+
+## Ověříme, že jsou data OK
+
+![](images/cli-03.png)
+
+## Zkusím jednoduchý dotaz
+
+![](images/cli-04.png)
+
+## Ukončím příkazem `.quit`
+
+![](images/cli-05.png)
+
+## Shrnutí importu
+
+### Spuštění DuckDb
+
+```bash
+duckdb sf-glamourcabaret-cz-2025-09-25.duckdb
+```
+
+### Import CSV souborů
+
+```sql
+CREATE TABLE internal_all AS FROM 'internal_all.csv';
+CREATE TABLE internal_html AS FROM 'internal_html.csv';
+CREATE TABLE external_all AS FROM 'external_all.csv';
+CREATE TABLE external_html AS FROM 'external_html.csv';
+CREATE TABLE all_inlinks AS FROM 'all_inlinks.csv';
+CREATE TABLE all_outlinks AS FROM 'all_outlinks.csv';
+CREATE TABLE javascript_all AS FROM 'javascript_all.csv';
+```
+
+### Ukončení
+
+```bash
+.quit
+```
+
+# DuckDb GUI
+
+## Spustím DuckDb s databází a GUI
+
+```bash
+duckdb {cesta k databázi} -ui
+```
+
+Tedy například:
+
+```bash
+duckdb sf-glamourcabaret-cz-2025-09-25.duckdb -ui
+```
+
+## GUI se otevře v prohlížeči
+
+![](images/duckdb-ui-01.png)
+
+## Zobrazím si strukturu tabulky
+
+![](images/duckdb-ui-02.png)
+
+## Založím notebook
+
+![](images/duckdb-ui-03.png)
+
+## Přidám buňku s SQL dotazem
+
+![](images/duckdb-ui-04.png)
+
+## Spustím SQL dotaz
+
+![](images/duckdb-ui-05.png)
+
+## Přidám další buňku a spustím
+
+![](images/duckdb-ui-06.png)
+
+## Výhody a nevýhody DuckDb GUI
+
+:::: {.columns}
+
+::: {.column width="48%"}
+### Výhody
+
+- Přehledné, hezky zobrazuje data.
+- Napovídá klíčová slova SQL a sloupce tabulek.
+- Výsledky dotazů jdou snadno kopírovat a exportovat.
+- Můžete mít připravený notebook s SQL dotazy.
+:::
+
+::: {.column width="2%"}
+:::
+
+::: {.column width="48%"}
+### Nevýhody
+
+- Experimentální funkce, ne zcela bez chyb.
+- UX by mohlo být ještě o dost lepší.
+:::
+::::
+
+## Alternativy k DuckDb GUI
+
+- IDE (TablePlus, Beekeeper Studio, DBeaver, VSCode + extension)
+- programovací jazyky (Python, R, Node.js, PHP...)
+- AI + MCP server
+
+# AI
+
+## Jak zprovoznit MCP
+
+Poradí vám článek [Close the Loop: Faster Data Pipelines with MCP, DuckDB & AI](https://motherduck.com/blog/faster-data-pipelines-with-mcp-duckdb-ai/)
+
+### Pokud jste líní studovat, zkuste prompt: {style="margin-top:4rem"}
+
+```text
+Na základě článku https://motherduck.com/blog/faster-data-pipelines-with-mcp-duckdb-ai/ bych si chtěl zprovoznit MCP server, přes který bych se mohl dotazovat na lokálně uložená data v DuckDb databázi. Pro dotazování použiju Claude Destop. Pomůžeš mi to zprovoznit?
+```
+
+## Claude Desktop
+
+![](images/claude-01.png)
+
+## Připojím dabatabázi
+
+![](images/claude-02.png)
+
+## Databáze připojena
+
+![](images/claude-03.png)
+
+## Zkontroluju dostupné tabulky
+
+![](images/claude-04.png)
+
+## A pak už se jen ptám
+
+![](images/claude-05.png)
+
+## A pak už se jen ptám
+
+![](images/claude-06.png)
+
+## A pak už se jen ptám
+
+![](images/claude-07.png)
+
+## Zvládl i join. To si zaslouží potlesk!
+
+![](images/claude-08.png)
+
+# Příklady SQL dotazů
+
+## Přímé odkazy na interní chyby 4xx
+
+```sql
+SELECT 
+  Source, Destination, Anchor, "Alt Text", "Status Code", "Link Position"
+FROM all_inlinks
+WHERE
+	"Status Code" BETWEEN 400 AND 499
+	AND Type = 'Hyperlink'
+	AND Source != Destination
+	AND Destination LIKE 'https://www.example.com/%'
+```
+
+Pro odkazy na externí 4xx se zneguje `Destination LIKE 'https://www.example.com/%'`.
+
+## Přesměrování na interní chyby 4xx
+
+```sql
+SELECT Source, Destination, "Status Code"
+FROM all_inlinks
+WHERE
+	"Status Code" BETWEEN 400 AND 499
+	AND Type = 'HTTP Redirect'
+	AND Destination LIKE 'https://www.example.com/%'
+```
+
+## Vzor obecného dotazu na odkazy na vybrané stránky
+
+Příklad z `internal_html` vybere určité stránky a pomocí `JOIN` k nim získá odkazy z `all_inlinks`. Hodí se pro všechny případy, kdy je potřeba získat odkazy na něco a v samotné tabulce `all_inlinks` nejsou data potřebná pro výběr řádků.
+
+```sql
+SELECT 
+  b.Source, b.Destination, b.Anchor, b."Alt Text", b."Link Position"
+FROM internal_html a
+JOIN all_inlinks b 
+  ON a.Address = b.Destination
+WHERE 
+  a.Indexability = 'Indexable'
+```
+
+## Neindexovatelné stránky v sitemapách
+
+```sql
+SELECT
+	ai.Source, ai.Destination, ai."Status Code", ih."Indexability Status"
+FROM all_inlinks ai
+JOIN internal_html ih ON ai.Destination = ih.Address
+WHERE
+	ai.Type = 'XML Sitemap'
+	AND ih.Indexability = 'Non-Indexable'
+```
+
+## Sirotci -- stránky odkazované jen z XML sitemap
+
+```sql
+SELECT DISTINCT Destination
+FROM all_inlinks
+WHERE
+  Type = 'XML Sitemap'
+  AND Destination NOT LIKE '%/sitemaps/%.xml'
+  AND Destination NOT IN (
+    SELECT DISTINCT Destination
+    FROM all_inlinks
+    WHERE 
+      Type IN ('Hyperlink', 'HTTP Redirect')
+      AND Destination != Source
+  )
+ORDER BY Destination
+```
+
+## Indexovatelné stránky, které nejsou v XML sitemapách
+
+```sql
+SELECT *
+FROM internal_html
+WHERE 
+  Indexability = 'Indexable'
+  AND Address NOT IN (
+	SELECT DISTINCT Destination
+	FROM all_inlinks
+	WHERE Type = 'XML Sitemap'
+  )
+```
+
+# Co by šlo vylepšit
+
+## Podrobné instrukce pro AI
+
+- projekty, custom GPT, Gems
+- claude.md pro Claude Code
+
+## DuckLake
+
+- Formát pro data lakes od autorů DuckDb
+- Šlo by propojit víc crawlů stejného webu.
+- Šlo by cestovat časem -- porovnávat crawly z různé doby.
+
+
+# Děkuju za pozornost
+
+- Rád vám pomůžu, napište mi na mprokop@prokopsw.cz.
