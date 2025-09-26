@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="frog-and-duck_files/libs/clipboard/clipboard.min.js"></script>
-<script src="frog-and-duck_files/libs/quarto-html/tabby.min.js"></script>
-<script src="frog-and-duck_files/libs/quarto-html/popper.min.js"></script>
-<script src="frog-and-duck_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="frog-and-duck_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="frog-and-duck_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="frog-and-duck_files/libs/quarto-html/quarto-syntax-highlighting-b27a020c860d7300719d21294f821b3d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-b27a020c860d7300719d21294f821b3d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.8.24">
 
   <meta name="author" content="Marek Prokop, PROKOP software s.r.o.">
@@ -14,8 +14,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="frog-and-duck_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="frog-and-duck_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -95,11 +95,11 @@
     code span.vs { color: #008000; } /* VerbatimString */
     code span.wa { color: #696969; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="frog-and-duck_files/libs/revealjs/dist/theme/quarto-3ba37d098d9170169d176d5402a5753f.css">
-  <link href="frog-and-duck_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="frog-and-duck_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="frog-and-duck_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="frog-and-duck_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-3ba37d098d9170169d176d5402a5753f.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -285,17 +285,17 @@ Marek Prokop, <a href="https://www.prokopsw.cz/cs">PROKOP software s.r.o.</a>
 <section id="shrnutí-importu" class="slide level2">
 <h2>Shrnutí importu</h2>
 <h3 id="spuštění-duckdb">Spuštění DuckDb</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">duckdb</span> sf-glamourcabaret-cz-2025-09-25.duckdb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">duckdb</span> sf-glamourcabaret-cz-2025-09-25.duckdb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <h3 id="import-csv-souborů">Import CSV souborů</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> internal_all <span class="kw">AS</span> <span class="kw">FROM</span> <span class="st">'internal_all.csv'</span>;</span>
-<span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> internal_html <span class="kw">AS</span> <span class="kw">FROM</span> <span class="st">'internal_html.csv'</span>;</span>
-<span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> external_all <span class="kw">AS</span> <span class="kw">FROM</span> <span class="st">'external_all.csv'</span>;</span>
-<span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> external_html <span class="kw">AS</span> <span class="kw">FROM</span> <span class="st">'external_html.csv'</span>;</span>
-<span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> all_inlinks <span class="kw">AS</span> <span class="kw">FROM</span> <span class="st">'all_inlinks.csv'</span>;</span>
-<span id="cb2-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> all_outlinks <span class="kw">AS</span> <span class="kw">FROM</span> <span class="st">'all_outlinks.csv'</span>;</span>
-<span id="cb2-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> javascript_all <span class="kw">AS</span> <span class="kw">FROM</span> <span class="st">'javascript_all.csv'</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> internal_all <span class="kw">AS</span> <span class="kw">FROM</span> <span class="st">'internal_all.csv'</span>;</span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> internal_html <span class="kw">AS</span> <span class="kw">FROM</span> <span class="st">'internal_html.csv'</span>;</span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> external_all <span class="kw">AS</span> <span class="kw">FROM</span> <span class="st">'external_all.csv'</span>;</span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> external_html <span class="kw">AS</span> <span class="kw">FROM</span> <span class="st">'external_html.csv'</span>;</span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> all_inlinks <span class="kw">AS</span> <span class="kw">FROM</span> <span class="st">'all_inlinks.csv'</span>;</span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> all_outlinks <span class="kw">AS</span> <span class="kw">FROM</span> <span class="st">'all_outlinks.csv'</span>;</span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> javascript_all <span class="kw">AS</span> <span class="kw">FROM</span> <span class="st">'javascript_all.csv'</span>;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <h3 id="ukončení">Ukončení</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">.quit</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">.quit</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="duckdb-gui" class="title-slide slide level1 center">
@@ -304,9 +304,9 @@ Marek Prokop, <a href="https://www.prokopsw.cz/cs">PROKOP software s.r.o.</a>
 </section>
 <section id="spustím-duckdb-s-databází-a-gui" class="slide level2">
 <h2>Spustím DuckDb s databází a GUI</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">duckdb</span> {cesta k databázi} <span class="at">-ui</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">duckdb</span> {cesta k databázi} <span class="at">-ui</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Tedy například:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">duckdb</span> sf-glamourcabaret-cz-2025-09-25.duckdb <span class="at">-ui</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="ex">duckdb</span> sf-glamourcabaret-cz-2025-09-25.duckdb <span class="at">-ui</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="gui-se-otevře-v-prohlížeči" class="slide level2">
 <h2>GUI se otevře v prohlížeči</h2>
@@ -411,73 +411,73 @@ Marek Prokop, <a href="https://www.prokopsw.cz/cs">PROKOP software s.r.o.</a>
 </section>
 <section id="přímé-odkazy-na-interní-chyby-4xx" class="slide level2">
 <h2>Přímé odkazy na interní chyby 4xx</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
-<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">Source</span>, Destination, Anchor, <span class="ot">"Alt Text"</span>, <span class="ot">"Status Code"</span>, <span class="ot">"Link Position"</span></span>
-<span id="cb7-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> all_inlinks</span>
-<span id="cb7-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
-<span id="cb7-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="ot">"Status Code"</span> <span class="kw">BETWEEN</span> <span class="dv">400</span> <span class="kw">AND</span> <span class="dv">499</span></span>
-<span id="cb7-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> <span class="kw">Type</span> <span class="op">=</span> <span class="st">'Hyperlink'</span></span>
-<span id="cb7-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> <span class="kw">Source</span> <span class="op">!=</span> Destination</span>
-<span id="cb7-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> Destination <span class="kw">LIKE</span> <span class="st">'https://www.example.com/%'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">Source</span>, Destination, Anchor, <span class="ot">"Alt Text"</span>, <span class="ot">"Status Code"</span>, <span class="ot">"Link Position"</span></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> all_inlinks</span>
+<span id="cb7-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
+<span id="cb7-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="ot">"Status Code"</span> <span class="kw">BETWEEN</span> <span class="dv">400</span> <span class="kw">AND</span> <span class="dv">499</span></span>
+<span id="cb7-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> <span class="kw">Type</span> <span class="op">=</span> <span class="st">'Hyperlink'</span></span>
+<span id="cb7-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> <span class="kw">Source</span> <span class="op">!=</span> Destination</span>
+<span id="cb7-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> Destination <span class="kw">LIKE</span> <span class="st">'https://www.example.com/%'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Pro odkazy na externí 4xx se zneguje <code>Destination LIKE 'https://www.example.com/%'</code>.</p>
 </section>
 <section id="přesměrování-na-interní-chyby-4xx" class="slide level2">
 <h2>Přesměrování na interní chyby 4xx</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Source</span>, Destination, <span class="ot">"Status Code"</span></span>
-<span id="cb8-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> all_inlinks</span>
-<span id="cb8-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
-<span id="cb8-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="ot">"Status Code"</span> <span class="kw">BETWEEN</span> <span class="dv">400</span> <span class="kw">AND</span> <span class="dv">499</span></span>
-<span id="cb8-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> <span class="kw">Type</span> <span class="op">=</span> <span class="st">'HTTP Redirect'</span></span>
-<span id="cb8-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> Destination <span class="kw">LIKE</span> <span class="st">'https://www.example.com/%'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Source</span>, Destination, <span class="ot">"Status Code"</span></span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> all_inlinks</span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
+<span id="cb8-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="ot">"Status Code"</span> <span class="kw">BETWEEN</span> <span class="dv">400</span> <span class="kw">AND</span> <span class="dv">499</span></span>
+<span id="cb8-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> <span class="kw">Type</span> <span class="op">=</span> <span class="st">'HTTP Redirect'</span></span>
+<span id="cb8-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> Destination <span class="kw">LIKE</span> <span class="st">'https://www.example.com/%'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="vzor-obecného-dotazu-na-odkazy-na-vybrané-stránky" class="slide level2">
 <h2>Vzor obecného dotazu na odkazy na vybrané stránky</h2>
 <p>Příklad z <code>internal_html</code> vybere určité stránky a pomocí <code>JOIN</code> k nim získá odkazy z <code>all_inlinks</code>. Hodí se pro všechny případy, kdy je potřeba získat odkazy na něco a v samotné tabulce <code>all_inlinks</code> nejsou data potřebná pro výběr řádků.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
-<span id="cb9-2"><a href="" aria-hidden="true" tabindex="-1"></a>  b.<span class="kw">Source</span>, b.Destination, b.Anchor, b.<span class="ot">"Alt Text"</span>, b.<span class="ot">"Link Position"</span></span>
-<span id="cb9-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> internal_html a</span>
-<span id="cb9-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> all_inlinks b </span>
-<span id="cb9-5"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">ON</span> a.Address <span class="op">=</span> b.Destination</span>
-<span id="cb9-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> </span>
-<span id="cb9-7"><a href="" aria-hidden="true" tabindex="-1"></a>  a.Indexability <span class="op">=</span> <span class="st">'Indexable'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a>  b.<span class="kw">Source</span>, b.Destination, b.Anchor, b.<span class="ot">"Alt Text"</span>, b.<span class="ot">"Link Position"</span></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> internal_html a</span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> all_inlinks b </span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">ON</span> a.Address <span class="op">=</span> b.Destination</span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> </span>
+<span id="cb9-7"><a aria-hidden="true" tabindex="-1"></a>  a.Indexability <span class="op">=</span> <span class="st">'Indexable'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="neindexovatelné-stránky-v-sitemapách" class="slide level2">
 <h2>Neindexovatelné stránky v sitemapách</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
-<span id="cb10-2"><a href="" aria-hidden="true" tabindex="-1"></a>    ai.<span class="kw">Source</span>, ai.Destination, ai.<span class="ot">"Status Code"</span>, ih.<span class="ot">"Indexability Status"</span></span>
-<span id="cb10-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> all_inlinks ai</span>
-<span id="cb10-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> internal_html ih <span class="kw">ON</span> ai.Destination <span class="op">=</span> ih.Address</span>
-<span id="cb10-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
-<span id="cb10-6"><a href="" aria-hidden="true" tabindex="-1"></a>    ai.<span class="kw">Type</span> <span class="op">=</span> <span class="st">'XML Sitemap'</span></span>
-<span id="cb10-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> ih.Indexability <span class="op">=</span> <span class="st">'Non-Indexable'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb10-2"><a aria-hidden="true" tabindex="-1"></a>    ai.<span class="kw">Source</span>, ai.Destination, ai.<span class="ot">"Status Code"</span>, ih.<span class="ot">"Indexability Status"</span></span>
+<span id="cb10-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> all_inlinks ai</span>
+<span id="cb10-4"><a aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> internal_html ih <span class="kw">ON</span> ai.Destination <span class="op">=</span> ih.Address</span>
+<span id="cb10-5"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
+<span id="cb10-6"><a aria-hidden="true" tabindex="-1"></a>    ai.<span class="kw">Type</span> <span class="op">=</span> <span class="st">'XML Sitemap'</span></span>
+<span id="cb10-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">AND</span> ih.Indexability <span class="op">=</span> <span class="st">'Non-Indexable'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="sirotci-stránky-odkazované-jen-z-xml-sitemap" class="slide level2">
 <h2>Sirotci – stránky odkazované jen z XML sitemap</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> Destination</span>
-<span id="cb11-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> all_inlinks</span>
-<span id="cb11-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
-<span id="cb11-4"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">Type</span> <span class="op">=</span> <span class="st">'XML Sitemap'</span></span>
-<span id="cb11-5"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> Destination <span class="kw">NOT</span> <span class="kw">LIKE</span> <span class="st">'%/sitemaps/%.xml'</span></span>
-<span id="cb11-6"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> Destination <span class="kw">NOT</span> <span class="kw">IN</span> (</span>
-<span id="cb11-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> <span class="kw">DISTINCT</span> Destination</span>
-<span id="cb11-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> all_inlinks</span>
-<span id="cb11-9"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span> </span>
-<span id="cb11-10"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="kw">Type</span> <span class="kw">IN</span> (<span class="st">'Hyperlink'</span>, <span class="st">'HTTP Redirect'</span>)</span>
-<span id="cb11-11"><a href="" aria-hidden="true" tabindex="-1"></a>      <span class="kw">AND</span> Destination <span class="op">!=</span> <span class="kw">Source</span></span>
-<span id="cb11-12"><a href="" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb11-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Destination</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> Destination</span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> all_inlinks</span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">Type</span> <span class="op">=</span> <span class="st">'XML Sitemap'</span></span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> Destination <span class="kw">NOT</span> <span class="kw">LIKE</span> <span class="st">'%/sitemaps/%.xml'</span></span>
+<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> Destination <span class="kw">NOT</span> <span class="kw">IN</span> (</span>
+<span id="cb11-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> <span class="kw">DISTINCT</span> Destination</span>
+<span id="cb11-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> all_inlinks</span>
+<span id="cb11-9"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span> </span>
+<span id="cb11-10"><a aria-hidden="true" tabindex="-1"></a>      <span class="kw">Type</span> <span class="kw">IN</span> (<span class="st">'Hyperlink'</span>, <span class="st">'HTTP Redirect'</span>)</span>
+<span id="cb11-11"><a aria-hidden="true" tabindex="-1"></a>      <span class="kw">AND</span> Destination <span class="op">!=</span> <span class="kw">Source</span></span>
+<span id="cb11-12"><a aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-13"><a aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> Destination</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="indexovatelné-stránky-které-nejsou-v-xml-sitemapách" class="slide level2">
 <h2>Indexovatelné stránky, které nejsou v XML sitemapách</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb12-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> internal_html</span>
-<span id="cb12-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> </span>
-<span id="cb12-4"><a href="" aria-hidden="true" tabindex="-1"></a>  Indexability <span class="op">=</span> <span class="st">'Indexable'</span></span>
-<span id="cb12-5"><a href="" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> Address <span class="kw">NOT</span> <span class="kw">IN</span> (</span>
-<span id="cb12-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> <span class="kw">DISTINCT</span> Destination</span>
-<span id="cb12-7"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> all_inlinks</span>
-<span id="cb12-8"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span> <span class="kw">Type</span> <span class="op">=</span> <span class="st">'XML Sitemap'</span></span>
-<span id="cb12-9"><a href="" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb12-2"><a aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> internal_html</span>
+<span id="cb12-3"><a aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> </span>
+<span id="cb12-4"><a aria-hidden="true" tabindex="-1"></a>  Indexability <span class="op">=</span> <span class="st">'Indexable'</span></span>
+<span id="cb12-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> Address <span class="kw">NOT</span> <span class="kw">IN</span> (</span>
+<span id="cb12-6"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">SELECT</span> <span class="kw">DISTINCT</span> Destination</span>
+<span id="cb12-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">FROM</span> all_inlinks</span>
+<span id="cb12-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">WHERE</span> <span class="kw">Type</span> <span class="op">=</span> <span class="st">'XML Sitemap'</span></span>
+<span id="cb12-9"><a aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section></section>
 <section>
 <section id="co-by-šlo-vylepšit" class="title-slide slide level1 center">
@@ -505,6 +505,7 @@ Marek Prokop, <a href="https://www.prokopsw.cz/cs">PROKOP software s.r.o.</a>
 <li>Rád vám pomůžu, napište mi na mprokop@prokopsw.cz.</li>
 </ul>
 
+
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
@@ -514,19 +515,19 @@ Marek Prokop, <a href="https://www.prokopsw.cz/cs">PROKOP software s.r.o.</a>
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="frog-and-duck_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="frog-and-duck_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="frog-and-duck_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="frog-and-duck_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="frog-and-duck_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="frog-and-duck_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="frog-and-duck_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="frog-and-duck_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="frog-and-duck_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="frog-and-duck_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

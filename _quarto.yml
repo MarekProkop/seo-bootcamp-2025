@@ -1,0 +1,11 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - frog-and-duck.qmd
+
+# všechny „volné“ assety, které odkazuješ v QMD (obrázky, loga, apod.)
+# Quarto je při renderu zkopíruje do docs/
+resources:
+  - images/**
+  - custom.scss

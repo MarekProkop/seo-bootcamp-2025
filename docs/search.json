@@ -1,0 +1,268 @@
+[
+  {
+    "objectID": "frog-and-duck.html#proč-screaming-frog",
+    "href": "frog-and-duck.html#proč-screaming-frog",
+    "title": "Frog&Duck",
+    "section": "Proč Screaming Frog",
+    "text": "Proč Screaming Frog\n\nPrůmysový standard.\nZvládá velké weby (i miliony adres).\nExportuje použitelná data.\nDělá chyby, ale jdou řešit."
+  },
+  {
+    "objectID": "frog-and-duck.html#proč-duckdb",
+    "href": "frog-and-duck.html#proč-duckdb",
+    "title": "Frog&Duck",
+    "section": "Proč DuckDb",
+    "text": "Proč DuckDb\n\nRychlá databáze speciálně na analytiku.\nZvládne miliony řádků a desítky GB dat.\nFunguje lokálně, nepotřebuje server.\nProvoz zvládnete i bez IT podpory.\nPřístup i z Pythonu, R a dalších jazyků.\nAutoři jsou sympaťáci.\n\nPřed lety jsem na velké crawly používal BigQuery + Looker Studio, ale byl to šílený opruz."
+  },
+  {
+    "objectID": "frog-and-duck.html#rozhraní-k-duckdb",
+    "href": "frog-and-duck.html#rozhraní-k-duckdb",
+    "title": "Frog&Duck",
+    "section": "Rozhraní k DuckDb",
+    "text": "Rozhraní k DuckDb\n\nCLI\nvlastní GUI\nIDE (TablePlus, Beekeeper Studio, DBeaver, VSCode + extension)\nprogramovací jazyky (Python, R, Node.js, PHP…)\nAI + MCP server"
+  },
+  {
+    "objectID": "frog-and-duck.html#crawl",
+    "href": "frog-and-duck.html#crawl",
+    "title": "Frog&Duck",
+    "section": "Crawl",
+    "text": "Crawl"
+  },
+  {
+    "objectID": "frog-and-duck.html#export-csv",
+    "href": "frog-and-duck.html#export-csv",
+    "title": "Frog&Duck",
+    "section": "Export CSV",
+    "text": "Export CSV"
+  },
+  {
+    "objectID": "frog-and-duck.html#otevřu-terminál",
+    "href": "frog-and-duck.html#otevřu-terminál",
+    "title": "Frog&Duck",
+    "section": "Otevřu terminál",
+    "text": "Otevřu terminál"
+  },
+  {
+    "objectID": "frog-and-duck.html#spustím-duckdb-a-založím-databázi",
+    "href": "frog-and-duck.html#spustím-duckdb-a-založím-databázi",
+    "title": "Frog&Duck",
+    "section": "Spustím DuckDb a založím databázi",
+    "text": "Spustím DuckDb a založím databázi"
+  },
+  {
+    "objectID": "frog-and-duck.html#importuju-csv-soubory",
+    "href": "frog-and-duck.html#importuju-csv-soubory",
+    "title": "Frog&Duck",
+    "section": "Importuju CSV soubory",
+    "text": "Importuju CSV soubory"
+  },
+  {
+    "objectID": "frog-and-duck.html#ověříme-že-jsou-data-ok",
+    "href": "frog-and-duck.html#ověříme-že-jsou-data-ok",
+    "title": "Frog&Duck",
+    "section": "Ověříme, že jsou data OK",
+    "text": "Ověříme, že jsou data OK"
+  },
+  {
+    "objectID": "frog-and-duck.html#zkusím-jednoduchý-dotaz",
+    "href": "frog-and-duck.html#zkusím-jednoduchý-dotaz",
+    "title": "Frog&Duck",
+    "section": "Zkusím jednoduchý dotaz",
+    "text": "Zkusím jednoduchý dotaz"
+  },
+  {
+    "objectID": "frog-and-duck.html#ukončím-příkazem-.quit",
+    "href": "frog-and-duck.html#ukončím-příkazem-.quit",
+    "title": "Frog&Duck",
+    "section": "Ukončím příkazem .quit",
+    "text": "Ukončím příkazem .quit"
+  },
+  {
+    "objectID": "frog-and-duck.html#shrnutí-importu",
+    "href": "frog-and-duck.html#shrnutí-importu",
+    "title": "Frog&Duck",
+    "section": "Shrnutí importu",
+    "text": "Shrnutí importu\nSpuštění DuckDb\nduckdb sf-glamourcabaret-cz-2025-09-25.duckdb\nImport CSV souborů\nCREATE TABLE internal_all AS FROM 'internal_all.csv';\nCREATE TABLE internal_html AS FROM 'internal_html.csv';\nCREATE TABLE external_all AS FROM 'external_all.csv';\nCREATE TABLE external_html AS FROM 'external_html.csv';\nCREATE TABLE all_inlinks AS FROM 'all_inlinks.csv';\nCREATE TABLE all_outlinks AS FROM 'all_outlinks.csv';\nCREATE TABLE javascript_all AS FROM 'javascript_all.csv';\nUkončení\n.quit"
+  },
+  {
+    "objectID": "frog-and-duck.html#spustím-duckdb-s-databází-a-gui",
+    "href": "frog-and-duck.html#spustím-duckdb-s-databází-a-gui",
+    "title": "Frog&Duck",
+    "section": "Spustím DuckDb s databází a GUI",
+    "text": "Spustím DuckDb s databází a GUI\nduckdb {cesta k databázi} -ui\nTedy například:\nduckdb sf-glamourcabaret-cz-2025-09-25.duckdb -ui"
+  },
+  {
+    "objectID": "frog-and-duck.html#gui-se-otevře-v-prohlížeči",
+    "href": "frog-and-duck.html#gui-se-otevře-v-prohlížeči",
+    "title": "Frog&Duck",
+    "section": "GUI se otevře v prohlížeči",
+    "text": "GUI se otevře v prohlížeči"
+  },
+  {
+    "objectID": "frog-and-duck.html#zobrazím-si-strukturu-tabulky",
+    "href": "frog-and-duck.html#zobrazím-si-strukturu-tabulky",
+    "title": "Frog&Duck",
+    "section": "Zobrazím si strukturu tabulky",
+    "text": "Zobrazím si strukturu tabulky"
+  },
+  {
+    "objectID": "frog-and-duck.html#založím-notebook",
+    "href": "frog-and-duck.html#založím-notebook",
+    "title": "Frog&Duck",
+    "section": "Založím notebook",
+    "text": "Založím notebook"
+  },
+  {
+    "objectID": "frog-and-duck.html#přidám-buňku-s-sql-dotazem",
+    "href": "frog-and-duck.html#přidám-buňku-s-sql-dotazem",
+    "title": "Frog&Duck",
+    "section": "Přidám buňku s SQL dotazem",
+    "text": "Přidám buňku s SQL dotazem"
+  },
+  {
+    "objectID": "frog-and-duck.html#spustím-sql-dotaz",
+    "href": "frog-and-duck.html#spustím-sql-dotaz",
+    "title": "Frog&Duck",
+    "section": "Spustím SQL dotaz",
+    "text": "Spustím SQL dotaz"
+  },
+  {
+    "objectID": "frog-and-duck.html#přidám-další-buňku-a-spustím",
+    "href": "frog-and-duck.html#přidám-další-buňku-a-spustím",
+    "title": "Frog&Duck",
+    "section": "Přidám další buňku a spustím",
+    "text": "Přidám další buňku a spustím"
+  },
+  {
+    "objectID": "frog-and-duck.html#výhody-a-nevýhody-duckdb-gui",
+    "href": "frog-and-duck.html#výhody-a-nevýhody-duckdb-gui",
+    "title": "Frog&Duck",
+    "section": "Výhody a nevýhody DuckDb GUI",
+    "text": "Výhody a nevýhody DuckDb GUI\n\n\nVýhody\n\nPřehledné, hezky zobrazuje data.\nNapovídá klíčová slova SQL a sloupce tabulek.\nVýsledky dotazů jdou snadno kopírovat a exportovat.\nMůžete mít připravený notebook s SQL dotazy.\n\n\n\n\nNevýhody\n\nExperimentální funkce, ne zcela bez chyb.\nUX by mohlo být ještě o dost lepší."
+  },
+  {
+    "objectID": "frog-and-duck.html#alternativy-k-duckdb-gui",
+    "href": "frog-and-duck.html#alternativy-k-duckdb-gui",
+    "title": "Frog&Duck",
+    "section": "Alternativy k DuckDb GUI",
+    "text": "Alternativy k DuckDb GUI\n\nIDE (TablePlus, Beekeeper Studio, DBeaver, VSCode + extension)\nprogramovací jazyky (Python, R, Node.js, PHP…)\nAI + MCP server"
+  },
+  {
+    "objectID": "frog-and-duck.html#jak-zprovoznit-mcp",
+    "href": "frog-and-duck.html#jak-zprovoznit-mcp",
+    "title": "Frog&Duck",
+    "section": "Jak zprovoznit MCP",
+    "text": "Jak zprovoznit MCP\nPoradí vám článek Close the Loop: Faster Data Pipelines with MCP, DuckDB & AI\nPokud jste líní studovat, zkuste prompt:\nNa základě článku https://motherduck.com/blog/faster-data-pipelines-with-mcp-duckdb-ai/ bych si chtěl zprovoznit MCP server, přes který bych se mohl dotazovat na lokálně uložená data v DuckDb databázi. Pro dotazování použiju Claude Destop. Pomůžeš mi to zprovoznit?"
+  },
+  {
+    "objectID": "frog-and-duck.html#claude-desktop",
+    "href": "frog-and-duck.html#claude-desktop",
+    "title": "Frog&Duck",
+    "section": "Claude Desktop",
+    "text": "Claude Desktop"
+  },
+  {
+    "objectID": "frog-and-duck.html#připojím-dabatabázi",
+    "href": "frog-and-duck.html#připojím-dabatabázi",
+    "title": "Frog&Duck",
+    "section": "Připojím dabatabázi",
+    "text": "Připojím dabatabázi"
+  },
+  {
+    "objectID": "frog-and-duck.html#databáze-připojena",
+    "href": "frog-and-duck.html#databáze-připojena",
+    "title": "Frog&Duck",
+    "section": "Databáze připojena",
+    "text": "Databáze připojena"
+  },
+  {
+    "objectID": "frog-and-duck.html#zkontroluju-dostupné-tabulky",
+    "href": "frog-and-duck.html#zkontroluju-dostupné-tabulky",
+    "title": "Frog&Duck",
+    "section": "Zkontroluju dostupné tabulky",
+    "text": "Zkontroluju dostupné tabulky"
+  },
+  {
+    "objectID": "frog-and-duck.html#a-pak-už-se-jen-ptám",
+    "href": "frog-and-duck.html#a-pak-už-se-jen-ptám",
+    "title": "Frog&Duck",
+    "section": "A pak už se jen ptám",
+    "text": "A pak už se jen ptám"
+  },
+  {
+    "objectID": "frog-and-duck.html#a-pak-už-se-jen-ptám-1",
+    "href": "frog-and-duck.html#a-pak-už-se-jen-ptám-1",
+    "title": "Frog&Duck",
+    "section": "A pak už se jen ptám",
+    "text": "A pak už se jen ptám"
+  },
+  {
+    "objectID": "frog-and-duck.html#a-pak-už-se-jen-ptám-2",
+    "href": "frog-and-duck.html#a-pak-už-se-jen-ptám-2",
+    "title": "Frog&Duck",
+    "section": "A pak už se jen ptám",
+    "text": "A pak už se jen ptám"
+  },
+  {
+    "objectID": "frog-and-duck.html#zvládl-i-join.-to-si-zaslouží-potlesk",
+    "href": "frog-and-duck.html#zvládl-i-join.-to-si-zaslouží-potlesk",
+    "title": "Frog&Duck",
+    "section": "Zvládl i join. To si zaslouží potlesk!",
+    "text": "Zvládl i join. To si zaslouží potlesk!"
+  },
+  {
+    "objectID": "frog-and-duck.html#přímé-odkazy-na-interní-chyby-4xx",
+    "href": "frog-and-duck.html#přímé-odkazy-na-interní-chyby-4xx",
+    "title": "Frog&Duck",
+    "section": "Přímé odkazy na interní chyby 4xx",
+    "text": "Přímé odkazy na interní chyby 4xx\nSELECT \n  Source, Destination, Anchor, \"Alt Text\", \"Status Code\", \"Link Position\"\nFROM all_inlinks\nWHERE\n    \"Status Code\" BETWEEN 400 AND 499\n    AND Type = 'Hyperlink'\n    AND Source != Destination\n    AND Destination LIKE 'https://www.example.com/%'\nPro odkazy na externí 4xx se zneguje Destination LIKE 'https://www.example.com/%'."
+  },
+  {
+    "objectID": "frog-and-duck.html#přesměrování-na-interní-chyby-4xx",
+    "href": "frog-and-duck.html#přesměrování-na-interní-chyby-4xx",
+    "title": "Frog&Duck",
+    "section": "Přesměrování na interní chyby 4xx",
+    "text": "Přesměrování na interní chyby 4xx\nSELECT Source, Destination, \"Status Code\"\nFROM all_inlinks\nWHERE\n    \"Status Code\" BETWEEN 400 AND 499\n    AND Type = 'HTTP Redirect'\n    AND Destination LIKE 'https://www.example.com/%'"
+  },
+  {
+    "objectID": "frog-and-duck.html#vzor-obecného-dotazu-na-odkazy-na-vybrané-stránky",
+    "href": "frog-and-duck.html#vzor-obecného-dotazu-na-odkazy-na-vybrané-stránky",
+    "title": "Frog&Duck",
+    "section": "Vzor obecného dotazu na odkazy na vybrané stránky",
+    "text": "Vzor obecného dotazu na odkazy na vybrané stránky\nPříklad z internal_html vybere určité stránky a pomocí JOIN k nim získá odkazy z all_inlinks. Hodí se pro všechny případy, kdy je potřeba získat odkazy na něco a v samotné tabulce all_inlinks nejsou data potřebná pro výběr řádků.\nSELECT \n  b.Source, b.Destination, b.Anchor, b.\"Alt Text\", b.\"Link Position\"\nFROM internal_html a\nJOIN all_inlinks b \n  ON a.Address = b.Destination\nWHERE \n  a.Indexability = 'Indexable'"
+  },
+  {
+    "objectID": "frog-and-duck.html#neindexovatelné-stránky-v-sitemapách",
+    "href": "frog-and-duck.html#neindexovatelné-stránky-v-sitemapách",
+    "title": "Frog&Duck",
+    "section": "Neindexovatelné stránky v sitemapách",
+    "text": "Neindexovatelné stránky v sitemapách\nSELECT\n    ai.Source, ai.Destination, ai.\"Status Code\", ih.\"Indexability Status\"\nFROM all_inlinks ai\nJOIN internal_html ih ON ai.Destination = ih.Address\nWHERE\n    ai.Type = 'XML Sitemap'\n    AND ih.Indexability = 'Non-Indexable'"
+  },
+  {
+    "objectID": "frog-and-duck.html#sirotci-stránky-odkazované-jen-z-xml-sitemap",
+    "href": "frog-and-duck.html#sirotci-stránky-odkazované-jen-z-xml-sitemap",
+    "title": "Frog&Duck",
+    "section": "Sirotci – stránky odkazované jen z XML sitemap",
+    "text": "Sirotci – stránky odkazované jen z XML sitemap\nSELECT DISTINCT Destination\nFROM all_inlinks\nWHERE\n  Type = 'XML Sitemap'\n  AND Destination NOT LIKE '%/sitemaps/%.xml'\n  AND Destination NOT IN (\n    SELECT DISTINCT Destination\n    FROM all_inlinks\n    WHERE \n      Type IN ('Hyperlink', 'HTTP Redirect')\n      AND Destination != Source\n  )\nORDER BY Destination"
+  },
+  {
+    "objectID": "frog-and-duck.html#indexovatelné-stránky-které-nejsou-v-xml-sitemapách",
+    "href": "frog-and-duck.html#indexovatelné-stránky-které-nejsou-v-xml-sitemapách",
+    "title": "Frog&Duck",
+    "section": "Indexovatelné stránky, které nejsou v XML sitemapách",
+    "text": "Indexovatelné stránky, které nejsou v XML sitemapách\nSELECT *\nFROM internal_html\nWHERE \n  Indexability = 'Indexable'\n  AND Address NOT IN (\n    SELECT DISTINCT Destination\n    FROM all_inlinks\n    WHERE Type = 'XML Sitemap'\n  )"
+  },
+  {
+    "objectID": "frog-and-duck.html#podrobné-instrukce-pro-ai",
+    "href": "frog-and-duck.html#podrobné-instrukce-pro-ai",
+    "title": "Frog&Duck",
+    "section": "Podrobné instrukce pro AI",
+    "text": "Podrobné instrukce pro AI\n\nprojekty, custom GPT, Gems\nclaude.md pro Claude Code"
+  },
+  {
+    "objectID": "frog-and-duck.html#ducklake",
+    "href": "frog-and-duck.html#ducklake",
+    "title": "Frog&Duck",
+    "section": "DuckLake",
+    "text": "DuckLake\n\nFormát pro data lakes od autorů DuckDb\nŠlo by propojit víc crawlů stejného webu.\nŠlo by cestovat časem – porovnávat crawly z různé doby."
+  }
+]
